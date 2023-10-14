@@ -38,6 +38,9 @@ export default function Home() {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         // The signed-in user info.
         const u = result.user;
+        const name = u.displayName;
+        const email = u.email;
+        const phone = u.phoneNumber
         setUser(u)
         navigateToDashboard(e)
         // IdP data available using getAdditionalUserInfo(result)
@@ -85,8 +88,8 @@ export default function Home() {
   return (
     <div className="h-full min-h-screen lg:h-screen w-full flex flex-col bg-white">
       <Head>
-        <title> ENTER YOUR APP NAME </title>
-        <meta name="description" content={`A social productivity tool designed to help you find your flow.`} />
+        <title> NeuroGrants </title>
+        <meta name="description" content={`Description.`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -96,12 +99,12 @@ export default function Home() {
       <div id="main" className="flex flex-col md:flex-row justify-center items-center w-full h-full gap-12 mx-auto mx-8 sm:px-8">
         <div id="hero" className='flex flex-col gap-y-5 sm:min-w-[24rem] px-6 sm:px-0'>
           <img className="h-24 w-24 sm:h-32 sm:w-32" alt="logo" src="/logo.png" />
-          <h1 className='text-6xl sm:text-7xl font-bold text-[#001122]'> ENTER YOUR APP NAME </h1>
-          <h2 className='text-[#999999] text-xl font-medium'> ENTER APP DESCRIPTION </h2>
+          <h1 className='text-6xl sm:text-7xl font-bold text-[#001122]'> neurogrants.com </h1>
+          <h2 className='text-[#999999] text-xl font-medium'> Enabling biomedical disease researchers to more easily find private grant funding sources. </h2>
           <div className="flex flex-row gap-x-3">
             <div>
               <button className="w-full flex items-center justify-center bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 px-4 py-2 rounded shadow"
-                onClick={async (e) => { !user ? signup(e) : navigateToDashboard(e)}}
+                onClick={async (e) => { !user ? signup(e) : navigateToDashboard(e) }}
               >{!user ? (
                 <div className="flex flex-row items-center">
                   <img src="google_icon.png"></img>
@@ -117,6 +120,7 @@ export default function Home() {
         </div>
         <div id="demo" className="w-full sm:w-[40rem] h-auto aspect-auto">
           <img
+            // TODO Change this logo
             src="logo.png" onContextMenu={() => false}
             className="object-cover w-96 h-96 sm:shadow-2xl sm:rounded-lg bg-black"
           />
