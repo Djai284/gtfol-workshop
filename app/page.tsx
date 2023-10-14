@@ -120,7 +120,6 @@ export default function Home() {
         </div>
         <div id="demo" className="w-full sm:w-[40rem] h-auto aspect-auto">
           <img
-            // TODO Change this logo
             src="logo.png" onContextMenu={() => false}
             className="object-cover w-96 h-96 sm:shadow-2xl sm:rounded-lg bg-black"
           />
