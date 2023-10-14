@@ -2,12 +2,15 @@
 
 import Image from 'next/image'
 import Head from 'next/head'
-import { useRef, useState } from 'react'; 
+import { useRef, useState } from 'react';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, doc, setDoc, Timestamp } from "firebase/firestore"; // firestore module
+import { getAuth, GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
+import { useRouter } from 'next/navigation';
+
+
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -24,24 +27,69 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// 
+// Initialize Auth
+const googleProvider = new GoogleAuthProvider()
+const auth = getAuth(app);
+
+// Initialize Firestore
+const db = getFirestore(app);
 
 export default function Home() {
 
-  const [email, setEmail] = useState("");
+  const [id, setID] = useState("")
+  const [user, setUser] = useState<User | null>(auth.currentUser)
 
   // const [status, setStatus] = useState<ResponseStatus>(ResponseStatus.Waiting);
   const [loading, setLoading] = useState(false);
 
   const emailInputRef = useRef<HTMLInputElement>(null);
 
+  const router = useRouter()
+
   const signup = async (e: any) => {
     e.preventDefault()
-    addEmail(email)
+    signInWithPopup(auth, googleProvider)
+      .then(async (result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        // The signed-in user info.
+        const u = result.user;
+        setUser(u)
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+        await addEmail(u.email!)
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
+  }
+
+  const navigateToDashboard = async (e: any) => {
+    e.preventDefault()
+    router.push("/dashboard")
   }
 
   const addEmail = async (email: string) => {
     console.log("user entered email: ", email)
+
+    // reference to the currently logged in user
+    const userRef = doc(db, 'users', email)
+
+    // creating user data from auth to be stored
+    const userData = {
+      name: user?.displayName,
+      dataLoggedIn: Timestamp.now(),
+      pfp: user?.photoURL,
+    }
+
+    // storing it in a document on Firestore
+    await setDoc(userRef, userData)
   };
 
 
@@ -63,35 +111,19 @@ export default function Home() {
           <h2 className='text-[#999999] text-xl font-medium'> ENTER APP DESCRIPTION </h2>
           <div className="flex flex-row gap-x-3">
             <div>
-              <input ref={emailInputRef}
-                name="email_address"
-                onChange={(e) => {
-                  // validateEmail(e.target.value)
-                  setEmail(e.target.value)
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    signup(e);
-                  }
-                }}
-                type="email"
-                value={email}
-                required={true}
-                autoComplete='off'
-                aria-label="Email address"
-                className={
-                  `appearance-none shadow rounded-xl ring-1 ring-silver leading-5 border border-transparent px-6 py-3 placeholder:text-black placeholder:text-opacity-25 block max-w-[360px] w-full text-[#222222] focus:outline-none focus:ring-2 bg-[#f2f2f2],
-                    'focus:ring-red-500',
-                    'focus:ring-electric-blue`
-                }
-                placeholder="name@email.com"
-              />
-
-
+              <button className="w-full flex items-center justify-center bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 px-4 py-2 rounded shadow"
+                onClick={async (e) => { !user ? signup(e) : navigateToDashboard(e)}}
+              >{!user ? (
+                <div className="flex flex-row items-center">
+                  <img src="google_icon.png"></img>
+                  Log In with Google
+                </div>) : (
+                <div>
+                  Go to Dashboard
+                </div>
+              )}
+              </button>
             </div>
-            <button onClick={(e) => signup(e)} className="px-5 py-3 border-none rounded-xl text-lg font-medium w-2/5 bg-blue hover:bg-electric-blue-accent text-white">
-              Submit
-            </button>
           </div>
         </div>
         <div id="demo" className="w-full sm:w-[40rem] h-auto aspect-auto">

@@ -1,31 +1,31 @@
-[debug] [2023-10-14T15:24:07.345Z] ----------------------------------------------------------------------
-[debug] [2023-10-14T15:24:07.346Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
-[debug] [2023-10-14T15:24:07.346Z] CLI Version:   12.7.0
-[debug] [2023-10-14T15:24:07.346Z] Platform:      darwin
-[debug] [2023-10-14T15:24:07.346Z] Node Version:  v18.17.0
-[debug] [2023-10-14T15:24:07.350Z] Time:          Sat Oct 14 2023 11:24:07 GMT-0400 (Eastern Daylight Time)
-[debug] [2023-10-14T15:24:07.350Z] ----------------------------------------------------------------------
+[debug] [2023-10-14T16:08:33.028Z] ----------------------------------------------------------------------
+[debug] [2023-10-14T16:08:33.029Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-10-14T16:08:33.029Z] CLI Version:   12.7.0
+[debug] [2023-10-14T16:08:33.029Z] Platform:      darwin
+[debug] [2023-10-14T16:08:33.029Z] Node Version:  v18.17.0
+[debug] [2023-10-14T16:08:33.030Z] Time:          Sat Oct 14 2023 12:08:33 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-10-14T16:08:33.030Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-10-14T15:24:07.382Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-10-14T15:24:07.382Z] > authorizing via signed-in user (teamrevspace@gmail.com)
-[debug] [2023-10-14T15:24:07.382Z] [iam] checking project gtfol-workshop for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2023-10-14T15:24:07.383Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions [none]
-[debug] [2023-10-14T15:24:07.383Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions x-goog-quota-user=projects/gtfol-workshop
-[debug] [2023-10-14T15:24:07.383Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-10-14T15:24:07.599Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions 200
-[debug] [2023-10-14T15:24:07.600Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-10-14T15:24:07.601Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop [none]
-[debug] [2023-10-14T15:24:07.858Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop 200
-[debug] [2023-10-14T15:24:07.859Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop {"projectId":"gtfol-workshop","projectNumber":"147805482218","displayName":"gtfol-workshop","name":"projects/gtfol-workshop","resources":{"hostingSite":"gtfol-workshop"},"state":"ACTIVE","etag":"1_120be17b-1c8f-4c61-8ab3-44855b99f436"}
-[debug] [2023-10-14T15:24:08.549Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites pageToken=&pageSize=10
-[debug] [2023-10-14T15:24:08.917Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
-[debug] [2023-10-14T15:24:08.917Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
-[debug] [2023-10-14T15:24:08.919Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 
-[debug] [2023-10-14T15:24:09.264Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
-[debug] [2023-10-14T15:24:09.264Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
-[debug] [2023-10-14T15:24:09.265Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config [none]
-[debug] [2023-10-14T15:24:09.687Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config 200
-[debug] [2023-10-14T15:24:09.687Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config {"projectId":"gtfol-workshop","appId":"1:147805482218:web:56191309adfd5611263b93","storageBucket":"gtfol-workshop.appspot.com","apiKey":"AIzaSyCof0GJ_P0ntqdM0tJoSj4TSHoAYdcLzJg","authDomain":"gtfol-workshop.firebaseapp.com","messagingSenderId":"147805482218","measurementId":"G-4PSR2TQVCZ"}
+[debug] [2023-10-14T16:08:33.061Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-14T16:08:33.061Z] > authorizing via signed-in user (teamrevspace@gmail.com)
+[debug] [2023-10-14T16:08:33.061Z] [iam] checking project gtfol-workshop for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-14T16:08:33.062Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions [none]
+[debug] [2023-10-14T16:08:33.062Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions x-goog-quota-user=projects/gtfol-workshop
+[debug] [2023-10-14T16:08:33.063Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-14T16:08:33.203Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions 200
+[debug] [2023-10-14T16:08:33.203Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-14T16:08:33.204Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop [none]
+[debug] [2023-10-14T16:08:33.436Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop 200
+[debug] [2023-10-14T16:08:33.437Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop {"projectId":"gtfol-workshop","projectNumber":"147805482218","displayName":"gtfol-workshop","name":"projects/gtfol-workshop","resources":{"hostingSite":"gtfol-workshop"},"state":"ACTIVE","etag":"1_120be17b-1c8f-4c61-8ab3-44855b99f436"}
+[debug] [2023-10-14T16:08:34.112Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites pageToken=&pageSize=10
+[debug] [2023-10-14T16:08:34.527Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
+[debug] [2023-10-14T16:08:34.527Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-14T16:08:34.527Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 
+[debug] [2023-10-14T16:08:35.143Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
+[debug] [2023-10-14T16:08:35.144Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-14T16:08:35.144Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config [none]
+[debug] [2023-10-14T16:08:35.583Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config 200
+[debug] [2023-10-14T16:08:35.583Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config {"projectId":"gtfol-workshop","appId":"1:147805482218:web:56191309adfd5611263b93","storageBucket":"gtfol-workshop.appspot.com","apiKey":"AIzaSyCof0GJ_P0ntqdM0tJoSj4TSHoAYdcLzJg","authDomain":"gtfol-workshop.firebaseapp.com","messagingSenderId":"147805482218","measurementId":"G-4PSR2TQVCZ"}
 [info] 
    Thank you for trying our early preview of Next.js support on Firebase Hosting.
    During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
@@ -38,15 +38,130 @@
 
 [info]    Creating an optimized production build ...
 
-[info]  ✓ Compiled successfully
+[info]  ⚠ Compiled with warnings
+
+./node_modules/node-fetch/lib/index.js
+Module not found: Can't resolve 'encoding' in '/Users/jai/Documents/rev/gtfol-workshop/node_modules/node-fetch/lib'
+
+Import trace for requested module:
+./node_modules/node-fetch/lib/index.js
+./node_modules/@firebase/auth/dist/node-esm/index.js
+./node_modules/firebase/auth/dist/index.mjs
+./app/page.tsx
+
 
 [info]    Linting and checking validity of types ...
 
 [info] 
 ./app/page.tsx
-59:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-96:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-96:11  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+102:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+139:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+139:11  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/6) ...
+
+[info]    Generating static pages (1/6) 
+
+[info]    Generating static pages (2/6) 
+   Generating static pages (4/6) 
+
+[info]  ✓ Generating static pages (6/6) 
+
+[info]    Finalizing page optimization ...
+
+[info]    Collecting build traces ...
+
+[info] 
+
+[info] Route (app)                              Size     First Load JS
+┌ ○ /                                    98.3 kB         179 kB
+├ ○ /_not-found                          883 B          81.4 kB
+└ ○ /dashboard                           137 B          80.6 kB
++ First Load JS shared by all            80.5 kB
+  ├ chunks/864-bb51502cb3bf8044.js       27.5 kB
+  ├ chunks/fd9d1056-551319d8fa2c4e1f.js  51 kB
+  ├ chunks/main-app-bd52771a14906a91.js  234 B
+  └ chunks/webpack-5a7d485537ce8670.js   1.79 kB
+
+
+
+[info] ○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • non-static component /_not-found
+[info] 
+[debug] [2023-10-14T16:08:55.634Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:885:11)
+    at execSync (node:child_process:957:15)
+    at prepareFrameworks (/usr/local/lib/node_modules/firebase-tools/lib/frameworks/index.js:367:42)
+    at async deploy (/usr/local/lib/node_modules/firebase-tools/lib/deploy/index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-10-14T16:10:11.732Z] ----------------------------------------------------------------------
+[debug] [2023-10-14T16:10:11.732Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-10-14T16:10:11.733Z] CLI Version:   12.7.0
+[debug] [2023-10-14T16:10:11.733Z] Platform:      darwin
+[debug] [2023-10-14T16:10:11.733Z] Node Version:  v18.17.0
+[debug] [2023-10-14T16:10:11.738Z] Time:          Sat Oct 14 2023 12:10:11 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-10-14T16:10:11.738Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-14T16:10:11.771Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-14T16:10:11.771Z] > authorizing via signed-in user (teamrevspace@gmail.com)
+[debug] [2023-10-14T16:10:11.771Z] [iam] checking project gtfol-workshop for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-14T16:10:11.772Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions [none]
+[debug] [2023-10-14T16:10:11.772Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions x-goog-quota-user=projects/gtfol-workshop
+[debug] [2023-10-14T16:10:11.772Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-14T16:10:11.993Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions 200
+[debug] [2023-10-14T16:10:11.994Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-14T16:10:11.995Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop [none]
+[debug] [2023-10-14T16:10:12.290Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop 200
+[debug] [2023-10-14T16:10:12.291Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop {"projectId":"gtfol-workshop","projectNumber":"147805482218","displayName":"gtfol-workshop","name":"projects/gtfol-workshop","resources":{"hostingSite":"gtfol-workshop"},"state":"ACTIVE","etag":"1_120be17b-1c8f-4c61-8ab3-44855b99f436"}
+[debug] [2023-10-14T16:10:12.994Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites pageToken=&pageSize=10
+[debug] [2023-10-14T16:10:13.561Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
+[debug] [2023-10-14T16:10:13.562Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-14T16:10:13.563Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 
+[debug] [2023-10-14T16:10:14.268Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
+[debug] [2023-10-14T16:10:14.269Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-14T16:10:14.270Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config [none]
+[debug] [2023-10-14T16:10:14.780Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config 200
+[debug] [2023-10-14T16:10:14.780Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config {"projectId":"gtfol-workshop","appId":"1:147805482218:web:56191309adfd5611263b93","storageBucket":"gtfol-workshop.appspot.com","apiKey":"AIzaSyCof0GJ_P0ntqdM0tJoSj4TSHoAYdcLzJg","authDomain":"gtfol-workshop.firebaseapp.com","messagingSenderId":"147805482218","measurementId":"G-4PSR2TQVCZ"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info]    Creating an optimized production build ...
+
+[info]  ⚠ Compiled with warnings
+
+
+[info] ./node_modules/node-fetch/lib/index.js
+Module not found: Can't resolve 'encoding' in '/Users/jai/Documents/rev/gtfol-workshop/node_modules/node-fetch/lib'
+
+Import trace for requested module:
+./node_modules/node-fetch/lib/index.js
+./node_modules/@firebase/auth/dist/node-esm/index.js
+./node_modules/firebase/auth/dist/index.mjs
+./app/page.tsx
+
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+./app/page.tsx
+102:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+139:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+139:11  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
 
@@ -63,13 +178,12 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
 [info]  ✓ Generating static pages (6/6) 
 
 [info]    Finalizing page optimization ...
-
-[info]    Collecting build traces ...
+   Collecting build traces ...
 
 [info] 
 
 [info] Route (app)                              Size     First Load JS
-┌ ○ /                                    10.9 kB        91.4 kB
+┌ ○ /                                    98.3 kB         179 kB
 ├ ○ /_not-found                          883 B          81.4 kB
 └ ○ /dashboard                           137 B          80.6 kB
 + First Load JS shared by all            80.5 kB
@@ -79,14 +193,14 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
   └ chunks/webpack-5a7d485537ce8670.js   1.79 kB
 
 
-[info] 
-○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+[info] ○  (Static)  automatically rendered as static HTML (uses no initial props)
 
 
 [info] Building a Cloud Function to run this application. This is needed due to:
 [info]  • non-static component /_not-found
 [info] 
-[debug] [2023-10-14T15:24:19.111Z] Error: Command failed: npm i --omit dev --no-audit
+[debug] [2023-10-14T16:10:23.482Z] Error: Command failed: npm i --omit dev --no-audit
     at checkExecSyncError (node:child_process:885:11)
     at execSync (node:child_process:957:15)
     at prepareFrameworks (/usr/local/lib/node_modules/firebase-tools/lib/frameworks/index.js:367:42)
