@@ -1,0 +1,189 @@
+[debug] [2023-10-14T13:56:10.989Z] ----------------------------------------------------------------------
+[debug] [2023-10-14T13:56:10.991Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-10-14T13:56:10.991Z] CLI Version:   12.7.0
+[debug] [2023-10-14T13:56:10.992Z] Platform:      darwin
+[debug] [2023-10-14T13:56:10.992Z] Node Version:  v18.17.0
+[debug] [2023-10-14T13:56:10.993Z] Time:          Sat Oct 14 2023 09:56:10 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-10-14T13:56:10.993Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-14T13:56:11.045Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-14T13:56:11.046Z] > authorizing via signed-in user (teamrevspace@gmail.com)
+[debug] [2023-10-14T13:56:11.046Z] [iam] checking project gtfol-workshop for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-14T13:56:11.047Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions [none]
+[debug] [2023-10-14T13:56:11.047Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions x-goog-quota-user=projects/gtfol-workshop
+[debug] [2023-10-14T13:56:11.047Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-14T13:56:11.303Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions 200
+[debug] [2023-10-14T13:56:11.303Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-14T13:56:11.305Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop [none]
+[debug] [2023-10-14T13:56:11.610Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop 200
+[debug] [2023-10-14T13:56:11.610Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop {"projectId":"gtfol-workshop","projectNumber":"147805482218","displayName":"gtfol-workshop","name":"projects/gtfol-workshop","resources":{"hostingSite":"gtfol-workshop"},"state":"ACTIVE","etag":"1_a63f2577-db75-4ac4-b35e-377f8f777199"}
+[debug] [2023-10-14T13:56:12.701Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites pageToken=&pageSize=10
+[debug] [2023-10-14T13:56:13.143Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
+[debug] [2023-10-14T13:56:13.143Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-14T13:56:13.144Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 
+[debug] [2023-10-14T13:56:13.538Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
+[debug] [2023-10-14T13:56:13.538Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-14T13:56:13.539Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config [none]
+[debug] [2023-10-14T13:56:14.065Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config 200
+[debug] [2023-10-14T13:56:14.065Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config {"projectId":"gtfol-workshop","appId":"1:147805482218:web:56191309adfd5611263b93","storageBucket":"gtfol-workshop.appspot.com","apiKey":"AIzaSyCof0GJ_P0ntqdM0tJoSj4TSHoAYdcLzJg","authDomain":"gtfol-workshop.firebaseapp.com","messagingSenderId":"147805482218","measurementId":"G-4PSR2TQVCZ"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+./app/page.tsx
+60:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+60:11  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/5) ...
+
+[info]    Generating static pages (1/5) 
+
+[info] [2023-10-14T13:56:22.003Z]  @firebase/analytics: Analytics: Firebase Analytics is not supported in this environment. Wrap initialization of analytics in analytics.isSupported() to prevent initialization in unsupported environments. Details: (1) Cookies are not available. (analytics/invalid-analytics-context).
+ReferenceError: window is not defined
+    at /Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:1473
+    at Component.instanceFactory (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:2119)
+    at Provider.getOrInitializeService (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:66:2827)
+    at Provider.initialize (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:66:2193)
+    at /Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:461
+    at getAnalytics (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:494)
+    at 1849 (/Users/jai/Documents/rev/gtfol-workshop/.next/server/app/page.js:3:1358)
+    at __webpack_require__ (/Users/jai/Documents/rev/gtfol-workshop/.next/server/webpack-runtime.js:1:145)
+    at I (/Users/jai/Documents/rev/gtfol-workshop/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:43:5587)
+    at /Users/jai/Documents/rev/gtfol-workshop/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:43:7561
+
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+ReferenceError: window is not defined
+    at /Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:1473
+    at Component.instanceFactory (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:2119)
+    at Provider.getOrInitializeService (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:66:2827)
+    at Provider.initialize (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:66:2193)
+    at /Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:461
+    at getAnalytics (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:494)
+    at 1849 (/Users/jai/Documents/rev/gtfol-workshop/.next/server/app/page.js:3:1358)
+    at __webpack_require__ (/Users/jai/Documents/rev/gtfol-workshop/.next/server/webpack-runtime.js:1:145)
+    at I (/Users/jai/Documents/rev/gtfol-workshop/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:43:5587)
+    at /Users/jai/Documents/rev/gtfol-workshop/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:43:7561
+
+[info]    Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5) 
+
+[info] 
+> Export encountered errors on following paths:
+	/page: /
+
+[debug] [2023-10-14T13:56:23.103Z] Error: ENOENT: no such file or directory, open '/Users/jai/Documents/rev/gtfol-workshop/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-10-14T13:57:07.633Z] ----------------------------------------------------------------------
+[debug] [2023-10-14T13:57:07.634Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-10-14T13:57:07.635Z] CLI Version:   12.7.0
+[debug] [2023-10-14T13:57:07.635Z] Platform:      darwin
+[debug] [2023-10-14T13:57:07.635Z] Node Version:  v18.17.0
+[debug] [2023-10-14T13:57:07.636Z] Time:          Sat Oct 14 2023 09:57:07 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-10-14T13:57:07.636Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-14T13:57:07.689Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-14T13:57:07.689Z] > authorizing via signed-in user (teamrevspace@gmail.com)
+[debug] [2023-10-14T13:57:07.689Z] [iam] checking project gtfol-workshop for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-14T13:57:07.691Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions [none]
+[debug] [2023-10-14T13:57:07.691Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions x-goog-quota-user=projects/gtfol-workshop
+[debug] [2023-10-14T13:57:07.691Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-14T13:57:07.899Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions 200
+[debug] [2023-10-14T13:57:07.900Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gtfol-workshop:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-14T13:57:07.901Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop [none]
+[debug] [2023-10-14T13:57:08.181Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop 200
+[debug] [2023-10-14T13:57:08.182Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop {"projectId":"gtfol-workshop","projectNumber":"147805482218","displayName":"gtfol-workshop","name":"projects/gtfol-workshop","resources":{"hostingSite":"gtfol-workshop"},"state":"ACTIVE","etag":"1_a63f2577-db75-4ac4-b35e-377f8f777199"}
+[debug] [2023-10-14T13:57:09.279Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites pageToken=&pageSize=10
+[debug] [2023-10-14T13:57:09.664Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
+[debug] [2023-10-14T13:57:09.664Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-14T13:57:09.665Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 
+[debug] [2023-10-14T13:57:10.076Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites 200
+[debug] [2023-10-14T13:57:10.077Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gtfol-workshop/sites {"sites":[{"name":"projects/gtfol-workshop/sites/gtfol-workshop","defaultUrl":"https://gtfol-workshop.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-14T13:57:10.077Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config [none]
+[debug] [2023-10-14T13:57:10.488Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config 200
+[debug] [2023-10-14T13:57:10.488Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gtfol-workshop/webApps/-/config {"projectId":"gtfol-workshop","appId":"1:147805482218:web:56191309adfd5611263b93","storageBucket":"gtfol-workshop.appspot.com","apiKey":"AIzaSyCof0GJ_P0ntqdM0tJoSj4TSHoAYdcLzJg","authDomain":"gtfol-workshop.firebaseapp.com","messagingSenderId":"147805482218","measurementId":"G-4PSR2TQVCZ"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+./app/page.tsx
+60:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+60:11  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/5) ...
+
+[info]    Generating static pages (1/5) 
+
+[info] [2023-10-14T13:57:17.450Z]  @firebase/analytics: Analytics: Firebase Analytics is not supported in this environment. Wrap initialization of analytics in analytics.isSupported() to prevent initialization in unsupported environments. Details: (1) Cookies are not available. (analytics/invalid-analytics-context).
+ReferenceError: window is not defined
+    at /Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:1473
+    at Component.instanceFactory (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:2119)
+    at Provider.getOrInitializeService (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:66:2827)
+    at Provider.initialize (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:66:2193)
+    at /Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:461
+    at getAnalytics (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:494)
+    at 1849 (/Users/jai/Documents/rev/gtfol-workshop/.next/server/app/page.js:3:1358)
+    at __webpack_require__ (/Users/jai/Documents/rev/gtfol-workshop/.next/server/webpack-runtime.js:1:145)
+    at I (/Users/jai/Documents/rev/gtfol-workshop/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:43:5587)
+    at /Users/jai/Documents/rev/gtfol-workshop/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:43:7561
+
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+ReferenceError: window is not defined
+    at /Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:1473
+    at Component.instanceFactory (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:2119)
+    at Provider.getOrInitializeService (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:66:2827)
+    at Provider.initialize (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:66:2193)
+    at /Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:461
+    at getAnalytics (/Users/jai/Documents/rev/gtfol-workshop/.next/server/chunks/880.js:426:494)
+    at 1849 (/Users/jai/Documents/rev/gtfol-workshop/.next/server/app/page.js:3:1358)
+    at __webpack_require__ (/Users/jai/Documents/rev/gtfol-workshop/.next/server/webpack-runtime.js:1:145)
+    at I (/Users/jai/Documents/rev/gtfol-workshop/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:43:5587)
+    at /Users/jai/Documents/rev/gtfol-workshop/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:43:7561
+
+[info]    Generating static pages (2/5) 
+   Generating static pages (3/5) 
+
+[info]  ✓ Generating static pages (5/5) 
+
+[info] 
+> Export encountered errors on following paths:
+	/page: /
+
+[debug] [2023-10-14T13:57:18.183Z] Error: ENOENT: no such file or directory, open '/Users/jai/Documents/rev/gtfol-workshop/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
