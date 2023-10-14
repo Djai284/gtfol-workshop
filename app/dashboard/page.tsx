@@ -51,14 +51,7 @@ export default function Dashboard() {
     { name: 'Your profile', href: '#' },
     { name: 'Sign out', href: '#', onClick: signOut },
   ]
-
-  useEffect(() => {
-    if (!auth.currentUser) {
-      router.push('/')
-    }
-  }, [auth])
-
-  return auth.currentUser && (
+  return (
   <>
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>

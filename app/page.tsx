@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Head from 'next/head'
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Import the functions you need from the SDKs you need
 
@@ -76,6 +76,10 @@ export default function Home() {
     // storing it in a document on Firestore
     await setDoc(userRef, userData)
   };
+
+  useEffect(() => {
+    setUser(auth.currentUser)
+  }, [])
 
 
   return (
