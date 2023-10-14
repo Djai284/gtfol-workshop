@@ -1,4 +1,6 @@
-import { Fragment, useState } from 'react'
+'use client'
+
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
@@ -14,6 +16,9 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
+import { getAuth } from 'firebase/auth'
+import app from '../firebase'
+import { useRouter } from 'next/navigation'
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -28,24 +33,33 @@ const teams = [
   { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
   { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
 ]
-const userNavigation = [
-  { name: 'Your profile', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
 
-export default function page() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+export default function Dashboard() {
+  const [ sidebarOpen, setSidebarOpen ] = useState(false);
 
-  return (
-    <>
-      {/*
-        This example requires updating your template:
+  const auth = getAuth(app)
+  const router = useRouter()
 
-        ```
-        <html class="h-full bg-white">
-        <body class="h-full">
-        ```
-      */}
+  const signOut = (e: any) => {
+    e.preventDefault()
+    auth.signOut().then(() => {
+      router.push('/')
+    })
+  }
+
+  const userNavigation = [
+    { name: 'Your profile', href: '#' },
+    { name: 'Sign out', href: '#', onClick: signOut },
+  ]
+
+  useEffect(() => {
+    if (!auth.currentUser) {
+      router.push('/')
+    }
+  }, [auth])
+
+  return auth.currentUser && (
+  <>
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
@@ -272,12 +286,12 @@ export default function page() {
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="h-8 w-8 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="/paulg.jpg"
                       alt=""
                     />
                     <span className="hidden lg:flex lg:items-center">
                       <span className="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">
-                        Tom Cook
+                        Paul Graham
                       </span>
                       <ChevronDownIcon className="ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                     </span>
@@ -294,12 +308,19 @@ export default function page() {
                     <Menu.Items className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                       {userNavigation.map((item) => (
                         <Menu.Item key={item.name}>
-                          {({ active }) => (
+                          {({ active }) => item.onClick ? (
+                            <button onClick={(e) => item.onClick(e)} className={clsx(
+                              active ? 'bg-gray-50' : '',
+                              'block px-3 py-1 text-sm leading-6 text-gray-900 w-full text-center'
+                            )}>
+                              {item.name}
+                            </button>
+                          ) : (
                             <a
                               href={item.href}
                               className={clsx(
                                 active ? 'bg-gray-50' : '',
-                                'block px-3 py-1 text-sm leading-6 text-gray-900'
+                                'block px-3 py-1 text-sm leading-6 text-gray-900 w-full text-center'
                               )}
                             >
                               {item.name}

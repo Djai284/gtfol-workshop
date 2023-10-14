@@ -5,27 +5,11 @@ import Head from 'next/head'
 import { useRef, useState } from 'react';
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+
 import { getFirestore, doc, setDoc, Timestamp } from "firebase/firestore"; // firestore module
 import { getAuth, GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
 import { useRouter } from 'next/navigation';
-
-
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCof0GJ_P0ntqdM0tJoSj4TSHoAYdcLzJg",
-  authDomain: "gtfol-workshop.firebaseapp.com",
-  projectId: "gtfol-workshop",
-  storageBucket: "gtfol-workshop.appspot.com",
-  messagingSenderId: "147805482218",
-  appId: "1:147805482218:web:5ea6e343014dd596263b93",
-  measurementId: "G-R1TY074LY9"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+import app from './firebase';
 
 // Initialize Auth
 const googleProvider = new GoogleAuthProvider()
@@ -55,6 +39,7 @@ export default function Home() {
         // The signed-in user info.
         const u = result.user;
         setUser(u)
+        navigateToDashboard(e)
         // IdP data available using getAdditionalUserInfo(result)
         // ...
         await addEmail(u.email!)
